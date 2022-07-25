@@ -50,6 +50,7 @@ a:hover,
 a:focus,
 a:active {
     text-decoration: none;
+    color: inherit;
 }
 
 /* remove arrow from select */
@@ -66,6 +67,9 @@ select {
     // background: rgba(0, 0, 255, 0.1);
 }
 
+ul {
+    list-style: none;
+}
 
 /** ============ start  custom style ============ */
 
@@ -92,4 +96,243 @@ body {
     font-family: 'DM Serif Display',
         serif;
     font-weight: 400;
+}
+
+.header {
+    background-color: $whiteText;
+    color: $regularText;
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 0;
+    }
+
+    &__hamburger {
+        display: none;
+    }
+}
+
+
+.nav {
+    text-transform: uppercase;
+    font-weight: 600;
+
+    &__links {
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+
+        .active-btn {
+            color: $darkText;
+
+            &:hover {
+                background-color: $darkText;
+                color: $whiteText;
+                border: 3px solid transparent;
+            }
+        }
+
+        &_item:hover {
+            color: $darkText;
+        }
+    }
+
+}
+
+.active-btn {
+    display: inline-block;
+    padding: 0.5rem 3rem;
+    border: 3px solid;
+}
+
+.top-line {
+    width: 100%;
+    position: relative;
+    padding: 3rem 0 1rem;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 25%;
+        height: 2px;
+        display: inline-block;
+        background-color: $whiteText;
+    }
+}
+
+.hero {
+    color: $whiteText;
+    background-color: $darkBg;
+    margin-bottom: 3rem;
+
+    &__container {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 4rem 0;
+        position: relative;
+    }
+
+    &__content {
+        flex: 0 1 45%;
+
+        &_heading {
+            font-size: 4.5rem;
+            margin-bottom: 1rem;
+        }
+
+        &_par {
+            line-height: 200%;
+            margin-bottom: 3rem;
+        }
+
+        &_link {
+            text-transform: uppercase;
+
+            &:hover {
+                background-color: $whiteText;
+                color: $darkBg;
+            }
+        }
+
+    }
+
+    &__img {
+        width: 45%;
+        top: 0;
+        right: 0;
+        position: absolute;
+        top: 3rem;
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+.cards {
+
+    &__inner {
+        padding: 5rem 0;
+
+        .top-line {
+            &::before {
+                width: 15%;
+                background-color: $regularText;
+            }
+        }
+
+        &_heading {
+            font-size: 5rem;
+            margin-bottom: 4rem;
+        }
+    }
+
+}
+
+.card {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    &__item {
+        flex: 0 1 350px;
+
+        &-img {
+            height: 80px;
+            margin-bottom: 2rem;
+
+            img {
+                height: 100%;
+            }
+        }
+
+        &_heading {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+        }
+
+        &_text {
+            color: $regularText;
+            line-height: 150%;
+        }
+
+    }
+
+}
+
+.section {
+    margin-bottom: 7rem;
+
+    &__container {
+        color: $whiteText;
+        background-color: $darkBg;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 4rem;
+    }
+
+    &__heading {
+        max-width: 560px;
+        font-size: 4rem;
+        line-height: 100%;
+    }
+
+    &__link:hover {
+        background-color: $whiteText;
+        color: $darkBg;
+    }
+}
+
+.footer {
+    padding: 4rem 0;
+    background-color: $whiteText;
+
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 1rem;
+        border-bottom: 2px solid $regularText;
+        margin-bottom: 3rem;
+    }
+
+    &__links {
+        display: flex;
+        gap: 3rem;
+
+        li a:hover {
+            svg path {
+                fill: $darkText;
+            }
+        }
+    }
+
+    &__bottom {
+        margin-bottom: 2rem;
+        display: flex;
+        gap: 15%;
+
+
+        &-links {
+            &_heading {
+                color: $regularText;
+                text-transform: uppercase;
+                margin-bottom: 3rem;
+            }
+
+            &_item a:hover {
+                text-decoration: underline;
+            }
+
+            &_item:not(:last-child) {
+                margin-bottom: 0.7rem;
+            }
+        }
+    }
 }
