@@ -92,6 +92,8 @@ body {
     font-weight: 700;
 }
 
+
+//style for all heading 
 .heading {
     font-family: 'DM Serif Display',
         serif;
@@ -101,6 +103,8 @@ body {
 .header {
     background-color: $whiteText;
     color: $regularText;
+
+
 
     &__inner {
         display: flex;
@@ -122,7 +126,7 @@ body {
     &__links {
         display: flex;
         align-items: center;
-        gap: 3rem;
+        gap: 2rem;
 
         .active-btn {
             color: $darkText;
@@ -141,11 +145,15 @@ body {
 
 }
 
+
+// btn via padding
 .active-btn {
     display: inline-block;
-    padding: 0.5rem 3rem;
+    padding: 0.5rem 2rem;
     border: 3px solid;
 }
+
+// decorotive line
 
 .top-line {
     width: 100%;
@@ -165,20 +173,35 @@ body {
 }
 
 .hero {
+    .decorative-img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 10;
+    }
+
     color: $whiteText;
     background-color: $darkBg;
-    margin-bottom: 3rem;
+    position: relative;
+    // background-image: url(../images/bg-pattern-intro-right-desktop.svg), url(../images/bg-pattern-intro-left-desktop.svg);
+    // background-position: 100% 0, 0 280%;
+
+    // background-image: url(../images/bg-pattern-intro-left-desktop.svg);
+    // background-position: 0 280%;
+    background-repeat: no-repeat;
+
 
     &__container {
         width: 100%;
         display: flex;
         justify-content: space-between;
-        padding: 4rem 0;
+        padding: 6rem 0 7rem;
         position: relative;
+        gap: 1rem;
     }
 
     &__content {
-        flex: 0 1 45%;
+        flex: 0 1 35vw;
 
         &_heading {
             font-size: 4.5rem;
@@ -202,11 +225,10 @@ body {
     }
 
     &__img {
-        width: 45%;
-        top: 0;
-        right: 0;
         position: absolute;
-        top: 3rem;
+        width: 50%;
+        top: 6rem;
+        right: 0;
 
         img {
             width: 100%;
@@ -215,6 +237,19 @@ body {
 }
 
 .cards {
+    position: relative;
+
+    .decorative-img {
+        position: absolute;
+        left: 0;
+        top: -25%;
+        pointer-events: none;
+    }
+
+    // background-image: url(../images/bg-pattern-intro-left-desktop.svg);
+    background-repeat: no-repeat;
+    // background-position: 0 -120%;
+    padding-top: 3rem;
 
     &__inner {
         padding: 5rem 0;
@@ -238,6 +273,7 @@ body {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    gap: 1rem;
 
     &__item {
         flex: 0 1 350px;
@@ -269,12 +305,18 @@ body {
     margin-bottom: 7rem;
 
     &__container {
+        background-image: url(../images/bg-pattern-how-we-work-desktop.svg);
+        background-repeat: no-repeat;
+        background-position: top right;
+        background-size: contain;
         color: $whiteText;
         background-color: $darkBg;
         display: flex;
         align-items: center;
         justify-content: space-between;
         padding: 4rem;
+        flex-wrap: wrap;
+        gap: 3rem;
     }
 
     &__heading {
@@ -292,7 +334,9 @@ body {
 .footer {
     padding: 4rem 0;
     background-color: $whiteText;
-
+    background-image: url(../images/bg-pattern-footer-desktop.svg);
+    background-repeat: no-repeat;
+    background-position: top left;
 
     &__header {
         display: flex;
@@ -332,6 +376,214 @@ body {
 
             &_item:not(:last-child) {
                 margin-bottom: 0.7rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:1024px) {
+    .header {
+        position: relative;
+
+
+        &__hamburger {
+            display: block;
+        }
+    }
+
+    .nav {
+        display: none;
+        padding: 10% 2rem;
+        background-color: $darkText;
+        color: $whiteText;
+        width: 100%;
+        position: absolute;
+        top: 68px;
+        left: 0;
+        z-index: 10;
+        height: calc(100vh - 68px);
+        background-image: url(../images/bg-pattern-mobile-nav.svg);
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-size: 100% auto;
+
+        &__links {
+            flex-direction: column;
+            text-align: center;
+
+            li {
+                width: 100%;
+            }
+
+            .active-btn {
+                padding: 1rem 0;
+                width: 100%;
+                color: $whiteText;
+            }
+        }
+    }
+
+    .hero {
+        .decorative-img {
+            display: none;
+        }
+
+        .container {
+            padding: 0;
+        }
+
+        .top-line {
+            &::before {
+                display: none;
+            }
+        }
+
+        &__container {
+            text-align: center;
+            justify-content: center;
+            padding: 0 0 100px;
+            flex-wrap: wrap-reverse;
+
+        }
+
+        &__content {
+            padding: 0 24px;
+            flex: 0 1 380px;
+
+            &_heading {
+                font-size: 2.8rem;
+            }
+        }
+
+        &__img {
+            width: 125%;
+            height: 500px;
+            max-height: 500px;
+            top: 0;
+            display: block;
+            position: relative;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+    .cards {
+        text-align: center;
+
+        &__inner {
+            padding: 5rem 0;
+
+            .top-line {
+                &::before {
+                    left: 50%;
+                    width: 50%;
+                    background-color: $regularText;
+                    transform: translate(-50%);
+                }
+            }
+
+            &_heading {
+                font-size: 3rem;
+                margin-bottom: 4rem;
+            }
+        }
+    }
+
+    .card {
+        justify-content: center;
+        gap: 3rem;
+    }
+
+    .section {
+
+        text-align: center;
+
+        &__container {
+            padding: 4rem 1rem;
+            justify-content: center;
+        }
+
+        &__heading {
+            font-size: 3rem;
+            width: 100%;
+        }
+    }
+
+
+    .footer {
+        &__bottom {
+            justify-content: space-between;
+            gap: 0;
+        }
+    }
+}
+
+
+@media screen and (max-width:768px) {
+    .hero {
+        // background-image: url(../images/bg-pattern-intro-right-mobile.svg), url(../images/bg-pattern-intro-left-mobile.svg);
+        // background-position: 100% 130%, 0 60%;
+        background-image: url(../images/bg-pattern-intro-left-mobile.svg);
+        background-position: 0 60%;
+    }
+
+    .cards {
+        .decorative-img {
+            content: url('../images/bg-pattern-intro-right-mobile.svg');
+            left: unset;
+            right: 0;
+            top: -10%;
+        }
+
+        // background-image: url(../images/bg-pattern-intro-right-mobile.svg);
+        // background-position: 100% -14%;
+    }
+
+    .section {
+        text-align: center;
+
+        &__container {
+            background-image: url(../images/bg-pattern-how-we-work-mobile.svg);
+
+            padding: 4rem 1rem;
+            justify-content: center;
+        }
+
+        &__heading {
+            font-size: 2rem;
+            width: 100%;
+        }
+    }
+
+    .footer {
+        background-image: url(../images/bg-pattern-footer-mobile.svg);
+
+        &__header {
+            text-align: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        &__links {
+            gap: 1.2rem;
+        }
+
+        &__bottom {
+            align-items: center;
+            justify-content: center;
+            gap: 2.5rem;
+            flex-direction: column;
+
+            &-links {
+                text-align: center;
+
+                &_heading {
+                    margin-bottom: 2.5rem;
+                }
             }
         }
     }
